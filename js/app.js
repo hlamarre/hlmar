@@ -76,7 +76,7 @@ class Block {
         }
 }
 
-async function setup() {
+function setup() {
 
     let canvas = createCanvas(windowWidth-20, windowHeight-20);        
     textSize(size+2);
@@ -93,11 +93,13 @@ async function setup() {
     }
     
     audioContext = new (window.AudioContext || window.webkitAudioContext)();
-    audioContext.resume().then(() => {
+    document.body.onclick = () => {
+        context.resume();audioContext.resume().then(() => {
         console.log('Playback resumed successfully');
-    });
+        });
+
     loadRNBO();
-    
+    }
 }
 
 async function loadRNBO() {
