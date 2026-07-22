@@ -109,6 +109,7 @@ async function loadRNBO() {
     device.node.connect(audioContext.destination);
     const cellsTotal = new RNBO.MessageEvent(device.context.currentTime * 1000, 'in2', [cells]);
     device.scheduleEvent(cellsTotal);
+    console.log('rnbo loaded successfully');
 }
 
 function startAudioContext() {
