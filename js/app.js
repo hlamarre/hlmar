@@ -92,13 +92,10 @@ function setup() {
         cells = k;
     }
     
-    audioContext = new (window.AudioContext || window.webkitAudioContext)();
     document.body.onclick = () => {
-        context.resume();audioContext.resume().then(() => {
-        console.log('Playback resumed successfully');
-        });
-
-    loadRNBO();
+        audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        audioContext.resume().then(() => { console.log('Playback resumed successfully'); });
+        loadRNBO();
     }
 }
 
