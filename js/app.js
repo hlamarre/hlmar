@@ -1,4 +1,5 @@
 let audioContext;
+let audioStart = false;
 let cols; 
 let rows; 
 let cells; 
@@ -92,10 +93,12 @@ function setup() {
         cells = k;
     }
     
-    document.body.onclick = () => {
+    document.body.onclick = () => { 
+        if (audioStart === false) {
         audioContext = new (window.AudioContext || window.webkitAudioContext)();
         audioContext.resume().then(() => { console.log('Playback resumed successfully'); });
         loadRNBO();
+        }
     }
 }
 
@@ -154,9 +157,11 @@ function draw() {
 
 
 function mouseClicked() {
-    for (let i=0; i<cols; i++) {
-        for (let j=0; j<rows; j++) {
-            blocks[i][j].click();
+    if (audioStart) {
+        for (let i=0; i<cols; i++) {
+            for (let j=0; j<rows; j++) {
+                blocks[i][j].click();
+            }
         }
     }
 }
