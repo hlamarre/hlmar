@@ -92,14 +92,7 @@ function setup() {
             }
         cells = k;
     }
-    
-    document.body.onclick = () => { 
-        if (audioStart === false) {
-        audioContext = new (window.AudioContext || window.webkitAudioContext)();
-        audioContext.resume().then(() => { console.log('Playback resumed successfully'); });
-        loadRNBO();
-        }
-    }
+
 }
 
 async function loadRNBO() {
@@ -152,7 +145,12 @@ function draw() {
             blocks[i][j].display();
         }
     }
-    text(frameRate(),20,20);
+    textSize(15);
+    //text(frameRate(),20,20);
+    text('click on the grid to start',20,20);
+    text('click on a cell to play a note',20,40);
+    text('press v to toggle life on and off',20,60);
+    text('press c to clear cells',20,80);
 }
 
 
@@ -163,7 +161,13 @@ function mouseClicked() {
                 blocks[i][j].click();
             }
         }
-    }
+    } 
+    else {
+        audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        audioContext.resume().then(() => { console.log('Playback resumed successfully'); });
+        loadRNBO();
+        audioStart = true;
+        }
 }
 
 function mouseDragged() {
