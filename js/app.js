@@ -63,7 +63,7 @@ class Block {
 
         const note = this.z % 127;
         const degree = Math.floor(this.z / 127);
-        const velocity = 5;
+        const velocity = 2;
 
         const now = device.context.currentTime * 1000;
 
@@ -147,12 +147,12 @@ function draw() {
     }
     textSize(15);
     fill(255);
-    text('- click on the grid to start',10,20);
-    text('- click on a cell to play a note',10,40);
-    text('- press v to toggle life on and off',10,60);
-    text('- press c to clear cells',10,80);
-    text('- try this shape : □□□ ',10,100);
-    text('                            □□□ ',10,109);
+    text('- click on the grid to start',5,20);
+    text('- click on a cell to play a note',5,40);
+    text('- press v to toggle life on and off',5,60);
+    text('- press c to clear cells',5,80);
+    text('- try this shape : □□□ ',5,100);
+    text('                            □□□ ',5,109);
 }
 
 
