@@ -153,6 +153,8 @@ function draw() {
     text('- press c to clear cells',5,80);
     text('- try this shape : □□□ ',5,100);
     text('                            □□□ ',5,109);
+    textSize(205);
+    text('ON',width/2, height/2)
 }
 
 
