@@ -145,6 +145,7 @@ function draw() {
             blocks[i][j].display();
         }
     }
+
     textSize(15);
     fill(255);
     text('- click on the grid to start',5,20);
@@ -171,7 +172,7 @@ function mouseClicked() {
         loadRNBO();
         audioStart = true;
         textSize(205);
-        text('ON',width/2, height/2)
+        text('ON',220, 90);
         }
 }
 
