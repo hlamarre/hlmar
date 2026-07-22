@@ -146,6 +146,7 @@ function draw() {
         }
     }
     textSize(15);
+    fill(255);
     //text(frameRate(),20,20);
     text('click on the grid to start',20,20);
     text('click on a cell to play a note',20,40);
