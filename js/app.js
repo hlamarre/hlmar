@@ -91,12 +91,13 @@ function setup() {
             }
         cells = k;
     }
-
-    audioContext = new (window.AudioContext || window.webkitAudioContext)();
-    audioContext.resume().then(() => {
-        console.log('Playback resumed successfully');
+    
+    function mouseMoved() { audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        audioContext.resume().then(() => {
+            console.log('Playback resumed successfully');
     });
     loadRNBO();
+}
     
 }
 
