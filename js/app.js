@@ -76,7 +76,7 @@ class Block {
         }
 }
 
-function setup() {
+async function setup() {
 
     let canvas = createCanvas(windowWidth-20, windowHeight-20);        
     textSize(size+2);
@@ -92,12 +92,11 @@ function setup() {
         cells = k;
     }
     
-    function mouseMoved() { audioContext = new (window.AudioContext || window.webkitAudioContext)();
-        audioContext.resume().then(() => {
-            console.log('Playback resumed successfully');
+    audioContext = new (window.AudioContext || window.webkitAudioContext)();
+    audioContext.resume().then(() => {
+        console.log('Playback resumed successfully');
     });
     loadRNBO();
-}
     
 }
 
