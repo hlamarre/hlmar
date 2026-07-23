@@ -128,7 +128,7 @@ function draw() {
     if (lifeState) { frameRate(speedOfLife)}
     else {frameRate(20)}
     
-    if (lifeState) { background(155); textSize(size); text('LIFE!',width/2,20);
+    if (lifeState) { background(255); textSize(size); text('LIFE!',width/2,50);
         for (let i=0; i<cols; i++) { 
                 for (let j=0; j<rows; j++) {
                      
